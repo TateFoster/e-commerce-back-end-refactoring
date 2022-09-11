@@ -25,6 +25,7 @@ router.get("/:id", async (req, res) => {
 
 		if (!tagData) {
 			res.status(404).json({ message: "No tag matches that id" });
+			return;
 		}
 		res.status(200).json(tagData);
 	} catch (err) {
@@ -37,7 +38,7 @@ router.post("/", async (req, res) => {
 	// create a new tag
 	try {
 		const newTag = await Tag.create({
-			category_name: req.body.category_name,
+			tag_name: req.body.tag_name,
 		});
 		res.status(200).json(newTag);
 	} catch (err) {
@@ -55,6 +56,7 @@ router.put("/:id", async (req, res) => {
 		});
 		if (!updateTag) {
 			res.status(404).json({ message: "No tag matches that id" });
+			return;
 		}
 		res.status(200).json(updateTag);
 	} catch (err) {
@@ -65,14 +67,15 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
 	// delete on tag by its `id` value
 	try {
-		const deletedTag = await Category.destroy({
+		const deletedTag = await Tag.destroy({
 			where: {
 				id: req.params.id,
 			},
 		});
 
 		if (!deletedTag) {
-			res.status(404).json({ message: "No category matches that id" });
+			res.status(404).json({ message: "No tag matches that id" });
+			return;
 		}
 		res.status(200).json(deletedTag);
 	} catch (err) {
