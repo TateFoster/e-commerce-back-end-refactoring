@@ -24,7 +24,7 @@
 
 This project was taking the code for setting up an e-commerce mysql database and getting it set up to use the sequelize npm for making the tables, and routes that the e-commerce business would be able to use.
 
-[E-Commerce Back End Routes](https://drive.google.com/file/d/1YWXgOYFZPYuMLHzC7gliiTmXlyDr3l26/view)
+[E-Commerce Back End Set Up and Routes](https://drive.google.com/file/d/1X9qLAEZR7dlfknTezTy8ibmmSCuI5QiU/view)
 
 ## Usage
 
